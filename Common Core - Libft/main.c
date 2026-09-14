@@ -6,17 +6,35 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:04:02 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/14 12:28:15 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/14 14:37:18 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
 struct Point {
     int x;
     int y;
 };
+
+char *custom_strnstr(const char *haystack, const char *needle, size_t len) {
+    size_t needle_len = strlen(needle);
+    
+    // An empty needle always returns the haystack
+    if (needle_len == 0) {
+        return (char *)haystack;
+    }
+
+    // Loop through haystack while we have enough characters left within 'len'
+    for (size_t i = 0; haystack[i] != '\0' && (i + needle_len) <= len; i++) {
+        if (strncmp(&haystack[i], needle, needle_len) == 0) {
+            return (char *)&haystack[i];
+        }
+    }
+    return NULL;
+}
 
 int	main(void)
 {
@@ -193,5 +211,27 @@ int	main(void)
 	// 	printf("p1 and p3 are different.\n");
 	// }
 
-	
+	// test strnstr
+
+	// const char *haystack = "Apple, Banana, Cherry";
+	// const char *needle = "Ban";
+	// char *result;
+
+	// // Example 1: Search limit is large enough to include "Banana"
+	// // "Banana" starts at index 7, so searching 15 characters covers it.
+	// result = ft_strnstr(haystack, needle, 15);
+	// if (result != NULL) {
+	// 	printf("Test 1: Found '%s' -> Remaining string: \"%s\"\n", needle, result);
+	// } else {
+	// 	printf("Test 1: '%s' not found within limit.\n", needle);
+	// }
+
+	// // Example 2: Search limit is too small
+	// // Limiting search to the first 10 characters ("Apple, Ban") cuts it off.
+	// result = ft_strnstr(haystack, needle, 9);
+	// if (result != NULL) {
+	// 	printf("Test 2: Found '%s'\n", needle);
+	// } else {
+	// 	printf("Test 2: '%s' not found within 10-character limit.\n", needle);
+	// }
 }

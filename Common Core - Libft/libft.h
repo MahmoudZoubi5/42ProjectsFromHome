@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:44:22 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/14 12:25:55 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/14 14:38:23 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 #endif
