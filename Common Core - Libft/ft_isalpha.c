@@ -6,13 +6,13 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 17:26:00 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/06 17:28:02 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/07 10:53:33 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c){
+int	ft_isalpha(int c)
+{
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }
-

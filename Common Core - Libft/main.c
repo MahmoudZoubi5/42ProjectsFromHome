@@ -1,7 +1,197 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/07 10:04:02 by mahal-zo          #+#    #+#             */
+/*   Updated: 2026/09/14 12:28:15 by mahal-zo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
+#include <stdio.h>
 
+struct Point {
+    int x;
+    int y;
+};
 
-int main()
+int	main(void)
 {
-      
+	// test strlen 
+//	printf ("isdigit = %ld\n", ft_strlen("kjhasjkd"));
+//	printf ("isdigit = %ld\n", ft_strlen(""));
+//	printf ("isdigit = %ld\n", ft_strlen("kjha sjkd"));
+//	// test memset
+//	
+//	int a[4];
+//	int val = 1;
+//	memset(a , val , sizeof(a));
+//	for (int i = 0; i < 4; i++)
+//	{
+//        	printf("%d ", a[i]);
+//    	}
+//	printf("\n------------------\n");
+//	int b[4];
+//	ft_memset(b , val , sizeof(b));
+//	for (int i = 0; i < 4; i++)
+//	{
+//        	printf("%d ", b[i]);
+//    	}
+
+//	// test bzero 
+//	int a[4];
+//	bzero(a , sizeof(a));
+//	for (int i = 0; i < 4; i++)
+//	{
+//        	printf("%d ", a[i]);
+//    	}
+//	printf("\n------------------\n");
+//	int b[4];
+//	ft_bzero(b , sizeof(b));
+//	for (int i = 0; i < 4; i++)
+//	{
+//        	printf("%d ", b[i]);
+//    	}
+
+	// test memcpy
+//	char source[] = "once upon a daydream...", dest[4];
+//	ft_memcpy(dest, source, sizeof (dest));
+//	for (int i = 0; i < 4 ; i++)
+//		printf("%c ", dest[i]);
+//
+	// // test memmove
+
+	// char csrc[100] = "Geeksfor"; 
+	// ft_memmove(csrc+5, csrc, strlen(csrc)+1); 
+	// printf("%s", csrc);
+
+	// test strlcpy
+
+	// char string[] = "Hello";
+	// char buffer[19];
+	// int r;
+
+	// r = ft_strlcpy(buffer,string,0);
+
+	// printf("Copied '%s' into '%s', length %d\n",
+	// 		string,
+	// 		buffer,
+	// 		r
+	// 	);
+
+	// test strlcat
+
+	// char destination[5] = "123";
+	// const char *source = "456789";
+	// size_t total_length;
+
+	// printf("size of: %zu\n", sizeof(destination));
+	// total_length = strlcat(destination, source, sizeof(destination));
+	// printf("Concatenated string: %s\n", destination);
+	// printf("Total length: %zu\n", total_length);
+
+	// test strchr
+
+	// char str[] = "GeeksforGeeks";
+
+	// char *ptr = ft_strchr(str, 'e');
+
+	// if (ptr != NULL)
+	// 	printf("Character found at position: %ld\n", ptr - str);
+	// else
+	// 	printf("Character not found\n");
+
+	// test strrchr
+
+	// // initializing string
+	// char str[] = "GeeksforGeeks";
+
+	// // character to be searched
+	// char chr = 'z';
+
+	// // Storing pointer returned by
+	// char* ptr = strrchr(str, chr);
+
+	// // getting the position of the character
+	// if (ptr) {
+	// 	printf("Last occurrence of %c in %s is at index %ld",
+	// 		chr, str, ptr - str);
+	// }
+	// // condition for character not present
+	// else {
+	// 	printf("%c is not present in %s ", chr, str);
+	// }
+
+	// test strncmp
+
+	// char myStr1[] = "ABCF";
+	// char myStr2[] = "AcCE";
+	// int cmp = ft_strncmp(myStr1, myStr2, 5);
+	// if (cmp > 0) {
+	// printf("%s is greater than %s\n", myStr1, myStr2);
+	// } else if (cmp < 0) {
+	// printf("%s is greater than %s\n", myStr2, myStr1);
+	// } else {
+	// printf("%s is equal to %s\n", myStr1, myStr2);
+	// }
+
+	// test memchr
+
+	// char data[] = "Hello, World!";
+	// char *found = (char *)ft_memchr(data, 'H', 1);
+
+	// if (found != NULL) {
+	// 	printf("Found character at position: %ld\n", found - data);
+	// } else {
+	// 	printf("Character not found.\n");
+	// }
+
+
+	// test memcmp
+
+	// char buffer1[] = "abcdef";
+	// char buffer2[] = "abcdeg";
+
+	// // Compare the first 5 bytes ("abcde" vs "abcde")
+	// int result1 = ft_memcmp(buffer1, buffer2, 5);
+	
+	// // Compare the first 6 bytes ("abcdef" vs "abcdeg")
+	// int result2 = ft_memcmp(buffer1, buffer2, 6);
+
+	// printf("--- Buffer Comparison ---\n");
+	// if (result1 == 0) {
+	// 	printf("First 5 bytes are equal.\n");
+	// } else {
+	// 	printf("First 5 bytes are different.\n");
+	// }
+
+	// if (result2 < 0) {
+	// 	printf("First 6 bytes: buffer1 is less than buffer2.\n\n");
+	// }
+
+	// // Example 2: Comparing structs
+	// struct Point p1 = {10, 20};
+	// struct Point p2 = {10, 20};
+	// struct Point p3 = {15, 30};
+
+	// printf("--- Struct Comparison ---\n");
+	
+	// // Compare p1 and p2
+	// if (ft_memcmp(&p1, &p2, sizeof(struct Point)) == 0) {
+	// 	printf("p1 and p2 contain the exact same data.\n");
+	// } else {
+	// 	printf("p1 and p2 are different.\n");
+	// }
+
+	// // Compare p1 and p3
+	// if (ft_memcmp(&p1, &p3, sizeof(struct Point)) == 0) {
+	// 	printf("p1 and p3 contain the exact same data.\n");
+	// } else {
+	// 	printf("p1 and p3 are different.\n");
+	// }
+
+	
 }
