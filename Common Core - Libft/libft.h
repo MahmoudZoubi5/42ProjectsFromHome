@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:44:22 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 15:08:01 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 16:09:22 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t n, size_t size);
 char	*strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

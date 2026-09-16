@@ -6,18 +6,20 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:04:02 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 15:28:23 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 16:11:36 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
 
 struct Point {
     int x;
     int y;
 };
+
 
 char *custom_strnstr(const char *haystack, const char *needle, size_t len) {
     size_t needle_len = strlen(needle);
@@ -82,11 +84,12 @@ int	main(void)
 //
 	// // test memmove
 
-	// char csrc[100] = "Geeksfor"; 
-	// ft_memmove(csrc+5, csrc, strlen(csrc)+1); 
+	// char csrc[100] = "mahmoud"; 
+	// ft_memmove(csrc + 7, csrc, strlen(csrc)); 
 	// printf("%s", csrc);
 
-	// test strlcpy
+
+	//test strlcpy
 
 	// char string[] = "Hello";
 	// char buffer[19];
@@ -204,7 +207,7 @@ int	main(void)
 	// 	printf("p1 and p2 are different.\n");
 	// }
 
-	// // Compare p1 and p3
+	// Compare p1 and p3
 	// if (ft_memcmp(&p1, &p3, sizeof(struct Point)) == 0) {
 	// 	printf("p1 and p3 contain the exact same data.\n");
 	// } else {
@@ -268,4 +271,10 @@ int	main(void)
 	// //for (int i =0;(size_t) i< ft_strlen(b); i++)
 	// 	//printf("%c" , b[i]);
 	// printf("ANS = %s" , b);
+
+	//test strjoin
+
+	char a[100] = "mahmoud "; 
+	char b[100] = "mahmoud"; 
+	printf("%s", ft_strjoin(a, b));
 }

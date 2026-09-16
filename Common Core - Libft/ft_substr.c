@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 14:43:54 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 15:27:10 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 16:53:38 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 		size++;
 	}
-	a = (char *) malloc(sizeof(char) * size + 1);
+	a = (char *) malloc(sizeof(char) * (size + 1));
 	if (!a)
 		return (NULL);
 	i = 0;
