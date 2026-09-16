@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 15:29:15 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 16:52:21 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 17:20:58 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_memmove(copy, s1, size1);
 	ft_memmove(copy + size1, s2, size2);
+	copy[size1 + size2] = '\0';
 	return (copy);
 }

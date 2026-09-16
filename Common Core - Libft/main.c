@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:04:02 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 16:11:36 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 18:05:25 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,7 +274,27 @@ int	main(void)
 
 	//test strjoin
 
-	char a[100] = "mahmoud "; 
-	char b[100] = "mahmoud"; 
-	printf("%s", ft_strjoin(a, b));
+	// char a[100] = "mahmoud "; 
+	// char b[100] = "mahmoud"; 
+	// printf("%s", ft_strjoin(a, b));
+
+
+
+	// test strtrim
+
+	// char a[100] = " ....  . .. . m.ahmoud........    "; 
+	// printf("%s", ft_strtrim(a, " ."));
+
+
+	// test split
+
+	//char *a = " ";
+	char input[] = "   ---  --  ajksdflkaj -- dsalfj    99 aslk9988lakjdf    ";
+	char **ans ;
+	//int length;
+	// while (*input)
+	// 	printf ("input : %s\n", one_word(input, a));
+	ans = ft_split(input, ' ');
+	for (int i = 0; ans[i]; i++)
+		printf("%s\n",ans[i]);
 }
