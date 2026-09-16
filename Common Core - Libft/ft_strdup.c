@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 14:19:27 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 14:30:45 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 14:41:06 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 char	*strdup(const char *s)
 {
 	int		i;
-	int		size;
 	char	*a;
 
-	size = ft_strlen(s);
-	a = malloc(sizeof (char) * size + 1);
+	a = malloc(sizeof (char) * ft_strlen(s) + 1);
 	i = 0;
 	while (s[i])
 	{

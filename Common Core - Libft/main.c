@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:04:02 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/14 15:32:03 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 15:28:23 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -260,4 +260,12 @@ int	main(void)
 	// char str5[] = "    +-2145hello123";
 	// int num5 = ft_atoi(str5);
 	// printf("String: \"%s\"  -> Integer: %d\n", str5, num5);
+
+	// test substr 
+
+	// char a[] = "mahmouad";
+	// char *b = ft_substr(a ,1 ,100);
+	// //for (int i =0;(size_t) i< ft_strlen(b); i++)
+	// 	//printf("%c" , b[i]);
+	// printf("ANS = %s" , b);
 }
