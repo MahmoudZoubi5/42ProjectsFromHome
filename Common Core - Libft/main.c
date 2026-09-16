@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:04:02 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/14 14:37:18 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/14 15:32:03 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,4 +234,30 @@ int	main(void)
 	// } else {
 	// 	printf("Test 2: '%s' not found within 10-character limit.\n", needle);
 	// }
+
+	// test atoi
+
+	// char str1[] = "12345";
+	// int num1 = ft_atoi(str1);
+	// printf("String: \"%s\" -> Integer: %d\n", str1, num1);
+
+	// // 2. String with a negative sign
+	// char str2[] = "-987";
+	// int num2 = ft_atoi(str2);
+	// printf("String: \"%s\"   -> Integer: %d\n", str2, num2);
+
+	// // 3. String with leading spaces and signs (ignored automatically)
+	// char str3[] = "   +42";
+	// int num3 = ft_atoi(str3);
+	// printf("String: \"%s\" -> Integer: %d\n", str3, num3);
+
+	// // 4. Partially valid string (stops at the first non-numeric character)
+	// char str4[] = "123withText";
+	// int num4 = ft_atoi(str4);
+	// printf("String: \"%s\" -> Integer: %d\n", str4, num4);
+
+	// // 5. Completely invalid string
+	// char str5[] = "    +-2145hello123";
+	// int num5 = ft_atoi(str5);
+	// printf("String: \"%s\"  -> Integer: %d\n", str5, num5);
 }
