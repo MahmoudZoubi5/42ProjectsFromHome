@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 17:22:42 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 18:05:37 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/16 18:26:11 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (boss);
 }
-
