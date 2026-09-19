@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 16:56:22 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/17 13:44:11 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/19 17:52:01 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s = 0;
 	e = 0;
 	i = 0;
-	while (s1[i] && is(s1[i], set))
-	{
-		i++;
+	while (s1[i] && is(s1[i++], set))
 		s++;
-	}
 	i = ft_strlen(s1) - 1;
+	if (s == i + 1)
+		return (ft_strdup(""));
 	while (i >= 0 && is(s1[i], set))
 	{
 		i--;

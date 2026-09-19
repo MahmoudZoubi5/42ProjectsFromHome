@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 14:43:54 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/16 16:53:38 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/19 17:27:30 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*a;
 
 	if (ft_strlen(s) <= start)
-		return ('\0');
+		return (ft_strdup(""));
 	i = start;
 	size = 0;
-	while (s[i] && size < len)
+	while (size < len && s[i])
 	{
 		i++;
 		size++;
@@ -31,12 +31,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!a)
 		return (NULL);
 	i = 0;
-	a[size] = '\0';
 	while (i < size)
 	{
 		a[i] = s[start];
 		i++;
 		start++;
 	}
+	a[i] = '\0';
 	return (a);
 }

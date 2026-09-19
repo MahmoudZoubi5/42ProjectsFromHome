@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 07:04:12 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/14 08:45:50 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/19 16:45:15 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-	dst[size - 1] = '\0';
+	dst[i] = '\0';
 	return (ft_strlen(src));
 }
