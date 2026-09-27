@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 12:03:54 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/19 15:24:55 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/24 14:20:31 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*s1;
 	size_t			i;
 
-	if (s == NULL)
-		return (NULL);
 	s1 = (unsigned char *)s;
 	i = 0;
 	while (i < n)

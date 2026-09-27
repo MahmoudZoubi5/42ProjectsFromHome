@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 11:49:14 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/19 16:38:14 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/27 17:42:53 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	ss1 = (unsigned char *)s1;
 	ss2 = (unsigned char *)s2;
+	if (ss1 == ss2)
+		return (0);
 	i = 0;
 	if (n == 0)
 		return (0);

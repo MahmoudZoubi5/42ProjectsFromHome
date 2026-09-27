@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 17:22:42 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/17 13:42:19 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/20 14:34:19 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 static int	f_num_worde(char const *s, char c)
 {
-	int	ans;
+	int	num;
 	int	i;
 
 	i = 0;
-	ans = 0;
+	num = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
-			ans++;
+			num++;
 		}
 		else
 		{
 			i++;
 		}
 	}
-	return (ans);
+	return (num);
 }
 
 static int	f_length_worde(char const *s, char c)
@@ -84,7 +84,6 @@ char	**ft_split(char const *s, char c)
 	ans = (char **) malloc (sizeof(char *) * (num_wordes + 1));
 	if (!ans)
 		return (NULL);
-	ans[num_wordes] = NULL;
 	i = 0;
 	j = 0;
 	while (i < num_wordes)
@@ -99,5 +98,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
+	ans[i] = NULL;
 	return (ans);
 }

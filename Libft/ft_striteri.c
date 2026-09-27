@@ -6,13 +6,13 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 09:50:14 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/17 09:54:11 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/27 17:37:08 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])

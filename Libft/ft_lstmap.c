@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 13:31:37 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/17 14:00:31 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/20 16:36:00 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&newlist, del);
 			return (NULL);
 		}
-		ft_lstadd_front(&newlist, temp);
+		ft_lstadd_back(&newlist, temp);
 		lst = lst->next;
 	}
 	return (newlist);

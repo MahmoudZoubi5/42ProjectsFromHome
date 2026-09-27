@@ -6,17 +6,13 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 10:44:22 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/17 14:43:26 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/21 20:17:22 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
-# include <stdio.h>
-# include <stdint.h>
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 

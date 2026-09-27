@@ -46,15 +46,20 @@ C_FILES = ft_atoi.c \
 	  ft_strmapi.c \
 	  ft_putchar_fd.c \
 	  ft_lstclear.c
-O_FILES := $(C_FILES:.c=.o)
-%.o : %.c
+O_FILES:= $(C_FILES:.c=.o)
+
+all: $(NAME)
+
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-all : $(NAME)
-$(NAME) : $(O_FILES)
+
+$(NAME): $(O_FILES)
 	ar -rcs $@ $^
-clean :
-	rm -f *.o
-fclean : clean
-	rm -f  $(NAME)
-re : fclean all
-.PHONY : clean fclean all re
+clean:
+	rm -f $(O_FILES)
+fclean: clean
+	rm -f $(NAME)
+re: fclean all
+
+.PHONY: all clean fclean re
+

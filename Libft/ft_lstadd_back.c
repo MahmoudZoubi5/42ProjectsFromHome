@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 13:09:53 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/17 13:14:14 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/09/20 16:17:06 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		(*lst) = new;
 	}
-	lastnode = ft_lstlast(*lst);
-	lastnode->next = new;
+	else
+	{
+		lastnode = ft_lstlast(*lst);
+		lastnode->next = new;
+	}
 }
