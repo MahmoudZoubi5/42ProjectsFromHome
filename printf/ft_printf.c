@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 11:36:46 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/09/28 16:38:34 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/10/01 15:47:16 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ static int	controlar(va_list list, char c)
 		co += ft_puthex(va_arg(list, unsigned int), 1);
 	else if (c == '%')
 		co += ft_putchar(c);
-	else
-	{
-		co += ft_putchar('%');
-		co += ft_putchar(c);
-	}
 	return (co);
 }
 
@@ -47,21 +42,22 @@ int	ft_printf(const char *s, ...)
 	int		co;
 	int		i;
 
+	if (s == NULL)
+		return (-1);
 	va_start(list, s);
 	i = 0;
 	co = 0;
 	while (s[i])
 	{
-		if (s[i] == '%' && s[i + 1])
+		if (s[i] == '%')
 		{
+			if (!s[i + 1])
+				return (-1);
 			co += controlar(list, s[i + 1]);
 			i += 2;
 		}
 		else
-		{
-			co += ft_putchar(s[i]);
-			i++;
-		}
+			co += ft_putchar(s[i++]);
 	}
 	va_end(list);
 	return (co);
