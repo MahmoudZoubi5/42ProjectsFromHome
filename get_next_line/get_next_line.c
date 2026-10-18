@@ -6,44 +6,75 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 16:16:57 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/10/14 17:45:42 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/10/18 17:50:55 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-#define BUFFER_SIZE 42
+#define BUFFER_SIZE 5 // the problem in the buffer size 
 
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (s[i])
 		i++;
 	return (i);
 }
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	size;
+	size_t	i;
+	char	*a;
+
+	if (ft_strlen(s) <= start)
+		return (malloc(0));
+	i = start;
+	size = 0;
+	while (size < len && s[i])
+	{
+		i++;
+		size++;
+	}
+	a = (char *) malloc(sizeof(char) * (size + 1));
+	if (!a)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		a[i] = s[start];
+		i++;
+		start++;
+	}
+	a[i] = '\0';
+	return (a);
+}
+
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (dest < src)
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] && i < size - 1)
 	{
-		ft_memcpy (dest, src, n);
+		dst[i] = src[i];
+		i++;
 	}
-	else
-	{
-		i = n - 1;
-		while ((int) i >= 0)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-			i--;
-		}
-	}
-	return (dest);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
+
+
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -57,26 +88,28 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	copy = (char *) malloc (sizeof (char) * (size1 + size2 + 1));
 	if (!copy)
 		return (NULL);
-	ft_memmove(copy, s1, size1);
-	ft_memmove(copy + size1, s2, size2);
+	ft_strlcpy(copy, s1, size1);
+	ft_strlcpy(copy + size1, s2, size2);
 	copy[size1 + size2] = '\0';
 	return (copy);
 }
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strchr(const char *s, int c)
 {
 	int		i;
 
+	if (s == NULL)
+		return (-1);
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == (char) c)
-			return (((char *)s + i));
+			return (i);
 		i++;
 	}
 	if (s[i] == (char) c)
-		return (((char *)s + i));
-	return (NULL);
+		return (i);
+	return (-1);
 }
 
 void	reader(int fd, char **contaner)
@@ -86,13 +119,15 @@ void	reader(int fd, char **contaner)
 	int		number_reads;
 
 	buf = malloc(BUFFER_SIZE + 1);
-	while (buf == NULL || !ft_strchr(buf, '\n'))
+	buf[0] = '\0';
+	if (!buf)
+		return ;
+	number_reads = 1;
+	while (number_reads > 0 && ft_strchr(buf, '\n') == -1 )
 	{
 		number_reads = read(fd, buf, BUFFER_SIZE);
-		if (number_reads == 0)
+		if (number_reads == 0 || number_reads == -1)
 			break ;
-		else if (number_reads == -1)
-			return (NULL);
 		buf[number_reads] = '\0';
 		temp = *contaner;
 		*contaner = ft_strjoin(*contaner, buf);
@@ -109,6 +144,9 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	
+	reader(fd, &contaner);
+	line = ft_substr(contaner, 0,ft_strchr(contaner, '\n'));
+	contaner = ft_substr(contaner, ft_strlen(line), ft_strlen(contaner));
+	// printf("line = %s \n contaner = %s \n-----------------------\n", line , contaner);
 	return (line);
 }
