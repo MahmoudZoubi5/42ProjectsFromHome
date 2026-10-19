@@ -6,7 +6,7 @@
 /*   By: mahal-zo <mahal-zo@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 16:16:57 by mahal-zo          #+#    #+#             */
-/*   Updated: 2026/10/19 11:42:37 by mahal-zo         ###   ########.fr       */
+/*   Updated: 2026/10/19 12:08:08 by mahal-zo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		copy[i] = s2[i - size1];
 		i++;
-
 	}
 	copy[i] = '\0';
 	return (copy);
